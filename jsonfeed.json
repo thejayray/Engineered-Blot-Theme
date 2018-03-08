@@ -1,0 +1,34 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "{{title}}",
+    "user_comment": "This feed allows you to read the posts from this site in any feed reader that supports the JSON Feed format. Current limitations with the blog host do not allow full feed entries. To add this feed to your reader, copy the following URL — {{blogURL}}/jsonfeed.json — and add it your reader. However, this feed is limited to recent entries. The <a href=\"http://www.engineeredeloquence.com/archive/\">Engineered Eloquence Archive</a> has a full listing of entries.",
+    "home_page_url": "{{blogURL}}",
+    "feed_url": "{{blogURL}}/jsonfeed.json",
+    "icon": "{{blogURL}}/public/apple-touch-icon-144-precomposed.png",
+    "favicon": "{{blogURL}}/public/favicon.ico",
+    "description": "",
+    "author": {
+        "name": "Jay Ray",
+        "url": "https://micro.blog/jayray"
+    },
+    "items": [
+    	{{#recentEntries}}
+        {
+        	"title": "{{title}}",
+			"date_published": "{{#formatDate}}YYYY-MM-DDTHH:mm:ssZ{{/formatDate}}",
+			"date_modified": "{{#formatDate}}YYYY-MM-DDTHH:mm:ssZ{{/formatDate}}",
+			"id" : "{{blogURL}}{{url}}",
+			"url" : "{{blogURL}}{{url}}",
+			"content_text": "See full content on Engineered Eloquence."
+        },
+        {{/recentEntries}}
+        {
+        	"title": "About",
+			"date_published": "2014-11-09T12:00:00-06:00",
+			"date_modified": "2014-11-09T12:00:00-06:00",
+			"id" : "{{blogURL}}/about",
+			"url" : "{{blogURL}}/about",
+			"content_text": "See full content on Engineered Eloquence."
+        }
+    ]
+}

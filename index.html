@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> sidebar}}
+    <div class="container">
+      <div class="main">
+
+        <h2>Latest entry</h2>
+        <style>
+          .latest-entry {display:none}
+          .latest-entry:first-of-type {display:block}
+        </style>
+        {{#recent_entries}}
+          {{^tagged.microblog}}
+	        <div class="latest-entry">
+                <a href="{{url}}">{{title}}</a>
+                <span class="summary small">{{date}}</span><br />
+        		<span class="summary small italics">{{metadata.tweet}}</span><br />
+          		<span class="summary">{{{teaserBody}}}</span>
+              	<p class="right"><a href="{{url}}">Continue reading...</a></p>
+            </div>
+          {{/tagged.microblog}}
+          {{#tagged.microblog}}
+	          {{#metadata.context}}
+    	      	  <div class="latest-entry">
+        	        Microblog Context: <a href="{{url}}">{{title}}</a>
+            	    <span class="summary small">{{date}}</span><br />
+	          		<span class="summary">{{{body}}}</span>
+        	    </div>
+          	{{/metadata.context}}
+          {{/tagged.microblog}}
+        {{/recent_entries}}
+		
+		<div id="pin">
+			<hr>
+	        <h2>Pinned entries</h2>
+        </div>
+        
+        {{#all_entries}}
+	        {{#metadata.pinned}}
+        			<p><a href="{{url}}">{{title}}</a>
+              			<span class="summary small">{{date}}</span><br />
+              			<span class="summary small italics">{{metadata.tweet}}</span>
+        			</p>
+        	{{/metadata.pinned}}
+        {{/all_entries}}
+        
+        <hr>
+        
+        <h2>Latest Microblog Post</h2>
+        <style>
+        #social p:nth-child(n+2) {
+			display:none
+        }
+        </style>
+		<div id="social">
+        {{#recent_entries}}
+          {{#tagged.microblog}}
+          {{^tagged.reading}}
+        	<p>
+            	<span>{{metadata.tweet}}</span>
+	            <span class="summary small">{{date}}</span>
+            {{#metadata.context}}
+            	<span class="right"><a href="{{url}}">See context...</a></span>
+            {{/metadata.context}}
+            </p>
+            {{/tagged.reading}}
+          {{/tagged.microblog}}
+        {{/recent_entries}}
+        </div>
+        <p class="right">More on the <a href="/microblog">Microblog</a></p>
+          
+        <hr>
+
+        <h2>Random entry</h2>
+        <p id="random"></p>
+        <script>
+        var entries = [
+         {{#all_entries}}
+          {{#metadata.tweet}}
+            {title: "{{title}}", url: "{{url}}", date: "{{date}}", tweet: "{{metadata.tweet}}"},
+          {{/metadata.tweet}}
+         {{/all_entries}}
+        ];       
+        
+        // We don't want to pick from the first six entries since
+        // they're already on the page.
+        entries = entries.slice(6);
+		
+        // Pick one of the remaining entries at random
+        var entry = entries[Math.floor(Math.random()*entries.length)];
+        var html = '<a href="' + entry.url +'">' + entry.title + '</a>' + ' ' + '<span class="small">' + entry.date + '</span><br /><span class="small italics">' + entry.tweet + '</span>';
+          
+        document.getElementById('random').innerHTML = html;
+        </script>
+        <p class="right">Full list in the <a href="/archive">Archive</a></p>
+          
+        <hr>
+          
+        <div id="column-break">
+        
+        <style>
+        #recent p:nth-child(n+7),
+        #recent p:first-child {
+			display:none
+        }
+        </style>
+        
+        <h2>Recent entries</h2>
+		<div id="recent">
+        {{#recent_entries}}
+        	{{^tagged.reading}}
+           <p>
+           {{#tagged.microblog}}
+           Microblog
+           {{#metadata.context}}
+           (with Context)
+           {{/metadata.context}}
+           :
+           {{/tagged.microblog}}
+             <a href="{{url}}">{{title}}</a>
+             <span class="summary small">{{date}}</span><br />
+             <span class="summary small italics">{{metadata.tweet}}</span>
+           </p>
+           {{/tagged.reading}}
+        {{/recent_entries}}
+        </div>
+        </div>
+
+        
+        <div class="footer"><hr /></div>
+        
+        {{> footer}}
+      </div>
+    </div>
+  </body>
+</html>

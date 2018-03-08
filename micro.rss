@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>{{title}}</title>
+  <link>{{blogURL}}</link>
+  <description>Playing with Web Technologies; Blogging about Life, Technology, and Other Things.</description>
+  <atom:link href="https://engineeredeloquence.com/microfeed" rel="self" type="application/rss+xml" />
+  <copyright>Copyright © 2009 - 2018, Jay Ray; all rights reserved.</copyright>
+  {{#all_entries}}
+  {{#tagged.microblog}}
+  <item>
+    <link>{{blogURL}}{{url}}</link>
+    <guid>{{blogURL}}{{url}}</guid>
+    <pubDate>{{#formatDate}}ddd, DD MMM YYYY HH:mm:ss z{{/formatDate}}</pubDate>
+    <description>
+    {{metadata.tweet}}
+	    {{#metadata.context}}
+			  &lt;a href="{{blogURL}}{{url}}"&gt;See Context&lt;/a&gt;
+	    {{/metadata.context}}
+	</description>
+  </item>
+  {{/tagged.microblog}}
+  {{/all_entries}}
+</channel>
+</rss>

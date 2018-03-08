@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> sidebar}}
+    <div class="container">
+      <div class="main">
+        
+        <h2>Recent Entries from the Microblog</h2>
+        {{#recent_entries}}
+  			{{#tagged.microblog}}
+   				<div class="light">
+                    {{#title}}
+        			<a href="{{url}}" title="{{title}}">{{title}}</a>
+                    {{/title}}
+                    {{#date}}
+                    {{date}}
+			        {{/date}}<br>
+        		</div>
+        		<div>
+        			{{#metadata.tweet}}
+						{{metadata.tweet}}
+                  	{{/metadata.tweet}}
+                </div>
+             {{#metadata.context}}
+                <div>
+ 					<p class="right"><a href="{{url}}">See context...</a></p>
+      			</div>
+          {{/metadata.context}}
+  			{{/tagged.microblog}}
+		{{/recent_entries}}
+
+        <hr />
+        
+        {{> footer}}
+      </div>
+    </div>
+  </body>
+</html>

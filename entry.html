@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+
+    {{> sidebar}}
+
+    {{#entry}}
+<!--
+   		 <div class="light date small">
+         	<a href="/"><Back</a>
+         </div>
+-->
+      {{#date}}
+        <div class="light date small">
+         <a href="{{url}}">{{date}}</a>
+        </div>
+      {{/date}}
+
+      <div class="entry">
+          <h1>
+          {{title}}
+          </h1>
+          {{#metadata.tweet}}
+        	<div>
+    	    <span class="summary small italics">{{metadata.tweet}}</span><br />
+    		</div>
+          {{/metadata.tweet}}
+        
+		  {{{body}}}
+      </div>
+
+      <div class="light">
+        {{#tags}}
+        <a class="tag" href="/tagged/{{slug}}">{{name}}</a>
+      {{/tags}}</div>
+
+      <br />
+
+      {{#adjacent}}
+      <br />
+      <p class="entry">
+
+      {{#previous}}
+      <span class="light adjacent">Previous:</span><a href="{{url}}" title="{{title}}">{{title}}</a><br />
+      {{/previous}}
+
+      {{#next}}
+      <span class="light adjacent">Next:</span><a href="{{url}}" title="{{title}}">{{title}}</a><br />
+      {{/next}}
+
+	  <span id="random">
+      <script>
+		var entries = [
+	 		{{#all_entries}}
+            	{title: "{{title}}", url: "{{url}}", date: "{{date}}"},
+            {{/all_entries}}
+        ];
+		
+        // Pick one of the remaining entries at random
+        var entry = entries[Math.floor(Math.random()*entries.length)];
+        var html = '<span class="light adjacent">Random:</span>' + '<a href="' + entry.url +'">' + entry.title + '</a>' + ' ' + '<span class="small">' + entry.date + '</span>';
+          
+		document.getElementById('random').innerHTML = html;
+	  </script>
+      </span>
+      </p>
+      <br />
+      {{/adjacent}}
+
+      {{> pluginHTML}}
+
+    {{/entry}}
+
+    {{> footer}}
+  </body>
+</html>

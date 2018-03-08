@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+
+    {{> sidebar}}
+
+    <h1>Archive</h1>
+
+    <div class="entry">
+
+      {{#archives}}
+      <h2>
+        {{{year}}}
+      </h2>
+        {{#months}}
+          {{#entries}}
+      		{{^tagged.microblog}}
+          <a href="{{url}}" title="{{title}}">{{title}}</a> <span class="light">{{date}}</span><Br />
+      		{{/tagged.microblog}}
+          {{/entries}}
+        {{/months}}
+      {{/archives}}
+
+    </div>
+	
+    <hr />
+    
+    {{> footer}}
+  </body>
+</html>

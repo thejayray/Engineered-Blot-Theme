@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+
+    {{> sidebar}}
+
+    <h1 class="tag">{{tag}}</h1>
+
+    <div class="entry">
+
+      {{#entries}}
+      <a href="{{url}}">{{title}}</a>
+      <span class="light">{{date}}</span>
+      <br />
+      {{/entries}}
+
+    </div>
+
+    <hr />
+
+    {{> footer}}
+  </body>
+</html>

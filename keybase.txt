@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/jayray
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://engineeredeloquence.com
+  * I am jayray (https://keybase.io/jayray) on keybase.
+  * I have a public key with fingerprint 12BF 3615 5110 E714 3271  3FB8 DE96 1DEE B693 5B41
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01015545945fc5b5a702b7ae5091955766dcbeb00d3d96afb35e4ed3456b0655058c0a",
+            "fingerprint": "12bf36155110e71432713fb8de961deeb6935b41",
+            "host": "keybase.io",
+            "key_id": "de961deeb6935b41",
+            "kid": "01015545945fc5b5a702b7ae5091955766dcbeb00d3d96afb35e4ed3456b0655058c0a",
+            "uid": "0994aa7f8f340912aef0c769e7554f19",
+            "username": "jayray"
+        },
+        "revoke": {
+            "sig_ids": [
+                "44d93ec6d9f24c740f3f51d820073b53f9a025b34d6efb0ca780f6dd5b70ad8d0f"
+            ]
+        },
+        "service": {
+            "hostname": "engineeredeloquence.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1445025250,
+    "expire_in": 157680000,
+    "prev": "077f5667f36285957ba6b97a0b9eb5f7e073968902b2cefaa3f151dc59a9bf23",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.47
+Comment: https://keybase.io/crypto
+
+yMJ5AnicrZJbaB1FGMdPerUBQWyhXomO1fYhxNnduewcUCvYBy0iFJNGjD3M7Hxz
+sibdPdmz56THctRUfbBSlHoBaytCSKu20toKNT5IEqqtLaZUosZC6E0Ujajtg4FI
+js7G+uaj8zLM8P9+33/+3xy7dmGuuentmR9m53KqtenU6J+VXMft7Re3IhXrGspv
+RT0wv0GvhnJa6Ak1yiPsYIdSQgWhJqCKSo5dxSVQLBxBKWdMBwoUxtrTgkmjPAoE
+tEcoU5hRiqkfYIlakQmjIiSlJIxSi3VcZTxmyY6DgTvEc7njGeVrEMzRAIoJjyri
+2MLuuJxVWHNKlqEtjO2dPRTm7f2H/n/2XfkHJwSRkhvfeMQSXAkGB5wJ4LaJcUQm
+LEMSyc1g1U/KWiJrqN6KEqjGPZClWg6L1nIZ5R9HhGjhQcC0MC4JOMHGM9TRvosx
+9xT1jJDYpcojmoFROJDcx4ZpTRXHUvsaG/SEZdt+1TCYh2cZXe0NUTGMABLQ0Bv3
+VSAKoC2IN1uDpSRO4yDutaLuNC3lM39prZQV9YMqXMUVVBhpOytbUIWkHMYRyjtW
+GaRhxncIodacS3Ergi2lMIFCmClsoj62K2sD1Swxzg1ljNsxuz4VlCvJlOASKwGK
+Gg72rYL5wo7FDcBI6RnHhhBQIYUyroeyB/ZFMcpza1MWLdJGGMm0kgCqj410Lco1
+NeeWLF6Q/eFc87Lr/v3Z/cuvyQ10TgxXDh6+/PIOxNbu3+WceuMxsW7k8457l257
+cWxoyq+MD33Tsjp+/6nBvrFHyPT6qb8+PXlhkzoz3b566kDnnpE1+4+8+f2tX5xt
+ae89c/HBLQvuXNE1e/eOBzbecc/2ZZ0T/K2zs4tPN/Ye39R49eHn14SV9oETu0ZH
+rzTu7/61trPxI9l9w/Q574/op1tWvbN3w9qbj6WXvms+/UqjsCG98tlzJcDv/Xzy
+4/u+XTUJK39b9EE3Kr6+/sMXDr62sGt4bHLo3OEjk/verd9YX3dp/NHzd33y9cBg
+2/nlF0oPteTmPpo5uqf/6C8HOrYfGpx7ZuPwTNdU9ctnJw7Vd9/20rYVS67fefnp
+8YG2r276/W+obGuA
+=fdl4
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jayray
+
+==================================================================

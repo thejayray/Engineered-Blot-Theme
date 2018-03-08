@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> sidebar}}
+    <div class="container">
+      <div class="main">
+
+        <h2>Latest entry</h2>
+        <style>
+          .latest-entry {display:none}
+          .latest-entry:first-of-type {display:block}
+        </style>
+        {{#recent_entries}}
+          {{^tagged.microblog}}
+	        <div class="latest-entry">
+                <a href="{{url}}">{{title}}</a>
+                <span class="summary small">{{date}}</span><br />
+        		<span class="summary small italics">{{metadata.tweet}}</span><br />
+          		<span class="summary">{{{body}}}</span>
+            </div>
+          {{/tagged.microblog}}
+          {{#tagged.microblog}}
+    	      	  <div class="latest-entry">
+                    {{#metadata.context}}
+        	        Microblog Context:
+                    {{/metadata.context}}
+                    <a href="{{url}}">{{title}}</a>
+            	    <span class="summary small">{{date}}</span><br />
+	          		{{#metadata.context}}
+                    <span class="summary small italics">{{metadata.tweet}}</span><br />
+                    <span class="summary">{{{body}}}</span>
+	          		{{/metadata.context}}
+	          		{{^metadata.context}}
+                    <span class="summary">{{metadata.tweet}}</span>
+	          		{{/metadata.context}}
+        	    </div>
+          {{/tagged.microblog}}
+        {{/recent_entries}}
+
+        
+        <div class="footer"><hr /></div>
+        
+        {{> footer}}
+      </div>
+    </div>
+  </body>
+</html>
