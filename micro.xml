@@ -7,19 +7,23 @@
   <atom:link href="https://engineeredeloquence.com/microfeed" rel="self" type="application/rss+xml" />
   <copyright>Copyright © 2009 - 2018, Jay Ray; all rights reserved.</copyright>
   {{#all_entries}}
-  {{#tagged.microblog}}
   <item>
     <link>{{blogURL}}{{url}}</link>
     <guid>{{blogURL}}{{url}}</guid>
     <pubDate>{{#formatDate}}ddd, DD MMM YYYY HH:mm:ss z{{/formatDate}}</pubDate>
     <description>
-    {{metadata.tweet}}
+      {{^tagged.microblog}}
+			  &lt;a href="{{blogURL}}{{url}}"&gt;{{title}}&lt;/a&gt;
+	  {{/tagged.microblog}}
+      
+      {{#tagged.microblog}}
+      	{{metadata.tweet}}
 	    {{#metadata.context}}
 			  &lt;a href="{{blogURL}}{{url}}"&gt;See Context&lt;/a&gt;
 	    {{/metadata.context}}
-	  	</description>
+	  {{/tagged.microblog}}
+	</description>
   </item>
-  {{/tagged.microblog}}
   {{/all_entries}}
 </channel>
 </rss>
